@@ -21,3 +21,9 @@
         git undo-commit-hard
     }
     ```
+
+* The cutting code:
+
+    ```sh
+    echo "feature/LOREM-124242-ipsum-dolor-sit-amet-23_2323" | cut -d'/' -f2 | cut -d'-' -f1-2
+    ```
