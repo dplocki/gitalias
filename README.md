@@ -10,14 +10,4 @@ Git Alias is a collection of git version control alias. It is a supplementary to
 
 ## Notes
 
-* verbose scripts template (for building aliases):
-
-    ```sh
-    #! /bin/bash
-    set -x
-
-    f () {
-    }
-
-    f $*
-    ```
+See the [DEVELOP.md](./DEVELOP.md).
