@@ -15,5 +15,5 @@ Git Alias is a collection of git version control alias. It is a supplementary to
     f () {
     }
 
-    f
+    f $*
     ```
