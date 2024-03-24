@@ -1,7 +1,22 @@
 # Commit prefix
 
+```ini
+pcmt = "!f () { git commit -m \"$*\"; }; branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2); f `printf \"[$branch]\"`"
+```
 
-# Notes
+## Whole code
+
+```sh
+f () {
+    git commit -m "$*"
+}
+
+branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2)
+
+f `printf "[$branch]"` $*
+```
+
+## Notes
 
 
 * The current branch, can be taken by:
@@ -22,7 +37,7 @@
     }
     ```
 
-* The cutting code:
+* The *cutting* code:
 
     ```sh
     echo "feature/LOREM-124242-ipsum-dolor-sit-amet-23_2323" | cut -d'/' -f2 | cut -d'-' -f1-2
