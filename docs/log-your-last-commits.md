@@ -2,7 +2,6 @@
 
 Display the list of last commits from given user.
 
-
 ## Notes
 
 * one line commit
@@ -40,3 +39,11 @@ Display the list of last commits from given user.
   * `%C(cyan)`
   * `%C(white)`
   * `%C(black)`
+
+* use colours example:
+
+  ```sh
+  git log --pretty=format:"%C(yellow)%h %Cgreen%ad %C(cyan)| %Cblue%an %Creset| %s"
+  ```
+
+* full date with hour: `--date=format-local:"%Y-%m-%d %H:%M"`
