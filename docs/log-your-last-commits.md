@@ -2,6 +2,12 @@
 
 Display the list of last commits from given user.
 
+## Whole code
+
+```sh
+git log --pretty=format:"%C(yellow)%H %Cgreen%ad %C(cyan) %Cblue%an %Creset %s" --date=format-local:"%Y-%m-%d %H:%M" $*
+```
+
 ## Notes
 
 * one line commit
