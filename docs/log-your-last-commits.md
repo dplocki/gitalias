@@ -53,3 +53,4 @@ git log --pretty=format:"%C(yellow)%H %Cgreen%ad %C(cyan) %Cblue%an %Creset %s" 
   ```
 
 * full date with hour: `--date=format-local:"%Y-%m-%d %H:%M"`
+* current user logs: `git log --author="$(git config user.name)"`
