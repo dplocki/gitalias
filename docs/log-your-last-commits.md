@@ -3,7 +3,7 @@
 Display the list of last commits of current user.
 
 ```ini
-ylc = !git log --pretty=tformat:'%C(yellow)%H%Creset %C(green)%ad %C(reset)%s' --date=format-local:'%Y-%m-%d %H:%M' --author=$(git config user.name) -n 10
+ylc = !git log --pretty=tformat:'%C(yellow)%H%Creset %C(green)%ad %C(reset)%s' --date=format-local:'%Y-%m-%d %H:%M' --no-merges -n 10 --author=$(git config user.email)
 ```
 
 Syntax:
@@ -37,7 +37,7 @@ $ git ylc -n 1
 ## Whole code
 
 ```sh
-git --pretty=tformat:'%C(yellow)%H%Creset %C(green)%ad %C(reset)%s' --date=format-local:'%Y-%m-%d %H:%M' --author=$(git config user.name) -n 10 $@
+git log --pretty=tformat:'%C(yellow)%H%Creset %C(green)%ad %C(reset)%s' --date=format-local:'%Y-%m-%d %H:%M' --no-merges -n 10 --author=$(git config user.email)
 ```
 
 ## Notes
