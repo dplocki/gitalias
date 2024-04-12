@@ -3,7 +3,7 @@
 Adds a prefix before the commit message. The prefix is taken from branch name.
 
 ```ini
-pcmt = "!f () { git commit -m \"$*\"; }; branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2); f `printf \"[$branch]\"`"
+pcmt = "!f () { git commit -m \"$*\"; }; branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2 | cut -d'_' -f1); f `printf \"[$branch]\"`"
 ```
 
 Syntax:
@@ -26,7 +26,7 @@ f () {
     git commit -m "$*"
 }
 
-branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2)
+branch=$(git rev-parse --abbrev-ref HEAD | cut -d'/' -f2 | cut -d'-' -f1-2 | cut -d'_' -f1)
 
 f `printf "[$branch]"` $*
 ```
@@ -56,4 +56,10 @@ f `printf "[$branch]"` $*
 
     ```sh
     echo "feature/LOREM-124242-ipsum-dolor-sit-amet-23_2323" | cut -d'/' -f2 | cut -d'-' -f1-2
+    ```
+
+* The improved *cutting* the code:
+
+    ```sh
+    echo "feature/LOREM-124242_ipsum_dolor_sit-amet-23_2323" | cut -d'/' -f2 | cut -d'-' -f1-2 | cut -d'_' -f1
     ```
