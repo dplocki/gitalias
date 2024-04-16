@@ -30,3 +30,9 @@ Use with caution.
    ```
 
 * remove all changes from `main` branch `git checkout main && git fetch origin --prune && git reset --hard origin/main` (see: [git mainly](https://github.com/GitAlias/gitalias/tree/7b941c3abbcee391b6bfc4f8d6b8372064245b49/doc/git-mainly))
+
+* enter the default branch, `git pull` and go back
+
+  ```sh
+  git checkout main && git pull && git checkout origin_branch
+  ```
