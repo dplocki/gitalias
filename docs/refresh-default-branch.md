@@ -3,6 +3,11 @@
 This command will remove all potential changes from the default local branch in your repository.
 Use with caution.
 
+## Whole code
+
+```sh
+```
+
 ## Notes
 
 * default branch: `git config init.defaultBranch` (see: [git default-branch](https://github.com/GitAlias/gitalias/blob/7b941c3abbcee391b6bfc4f8d6b8372064245b49/doc/git-default-branch/index.md))
@@ -21,12 +26,18 @@ Use with caution.
         git symbolic-ref refs/remotes/origin/HEAD --short
         ```
 
-  unfortunetly, that can return the old value (previous default branch)
+  unfortunately, that can return the old value (previous default branch)
 
 * the other suggestions is command:
 
    ```sh
    git remote show origin | grep 'HEAD branch' | cut -d' ' -f5
+   ```
+
+   * the change for different language version of the client:
+
+   ```sh
+   git remote show origin | grep 'HEAD' | cut -d' ' -f5
    ```
 
 * remove all changes from `main` branch `git checkout main && git fetch origin --prune && git reset --hard origin/main` (see: [git mainly](https://github.com/GitAlias/gitalias/tree/7b941c3abbcee391b6bfc4f8d6b8372064245b49/doc/git-mainly))
