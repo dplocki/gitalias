@@ -6,6 +6,17 @@ Use with caution.
 ## Whole code
 
 ```sh
+f () {
+  git checkout $1
+  git pull
+  git checkout $2
+}
+
+main=`git remote show origin | grep 'HEAD' | cut -d' ' -f5`
+branch=${1:-"$main"}
+current=`git branch --show-current`
+
+f $branch $current $*
 ```
 
 ## Notes
