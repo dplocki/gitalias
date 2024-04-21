@@ -47,3 +47,5 @@ Use with caution.
   ```sh
   git checkout main && git pull && git checkout origin_branch
   ```
+
+* default parameter value: `branch=${1:-"$main"}`
