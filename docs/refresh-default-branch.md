@@ -4,7 +4,14 @@ This command will remove all potential changes from the default local branch in 
 Use with caution.
 
 ```ini
-rdb = "!f () { git checkout $1 && git pull && git checkout $2; }; main=`git remote show origin | grep 'HEAD' | cut -d' ' -f5`; branch=${1:-\"$main\"}; current=`git branch --show-current`; f $branch $current"
+rdb = "!f () { git checkout $1 && git pull && git checkout $2; }; default=`git remote show origin | grep 'HEAD' | cut -d' ' -f5`; branch=${1:-\"$default\"}; current=`git branch --show-current`; f $branch $current"
+```
+
+Syntax
+
+```
+git rdb
+git rdb [the branch to refresh]
 ```
 
 ## Whole code
@@ -16,8 +23,8 @@ f () {
   git checkout $2
 }
 
-main=`git remote show origin | grep 'HEAD' | cut -d' ' -f5`
-branch=${1:-"$main"}
+default=`git remote show origin | grep 'HEAD' | cut -d' ' -f5`
+branch=${1:-"$default"}
 current=`git branch --show-current`
 
 f $branch $current $*
