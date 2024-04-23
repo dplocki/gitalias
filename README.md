@@ -8,6 +8,7 @@ Git Alias is a collection of git version control alias. It is a supplementary to
 
 * [git pcmt](./docs/commit-prefix.md) - automatic prefix based on branch name
 * [git ylc](./docs/log-your-last-commits.md) - display last current users' commits
+* [git rdb](./docs/refresh-default-branch.md) - refresh the default branch
 
 ## Notes
 
